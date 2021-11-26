@@ -8,10 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import in.purabtech.todo.TodoService;
+
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 	
+	private static final long serialVersionUID = 1L;
 	private LoginService service = new LoginService();
+	
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,8 +35,7 @@ public class LoginServlet extends HttpServlet {
 		boolean isValidUser = service.validateUser(name, password);
 		
 		if (isValidUser) {
-			request.setAttribute("name", name);
-			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+			response.sendRedirect("/todo.do");
 		} else {
 			request.setAttribute("errorMessage", "Invalid Credentials!!");
 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
