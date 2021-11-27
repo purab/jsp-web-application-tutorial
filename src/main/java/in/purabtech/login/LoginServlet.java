@@ -1,4 +1,4 @@
-package in.purabtech;
+package in.purabtech.login;
 
 import java.io.IOException;
 
@@ -32,10 +32,13 @@ public class LoginServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		
+		System.out.println("password is:"+password);
+		
 		boolean isValidUser = service.validateUser(name, password);
 		
 		if (isValidUser) {
-			response.sendRedirect("/todo.do");
+			request.getSession().setAttribute("name", name);
+			response.sendRedirect("/list-todos.do");
 		} else {
 			request.setAttribute("errorMessage", "Invalid Credentials!!");
 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);

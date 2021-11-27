@@ -1,12 +1,12 @@
 package in.purabtech.todo;
 
 public class Todo {
+	private String name;
+
 	public Todo(String name) {
 		super();
 		this.name = name;
 	}
-
-	private String name;
 
 	public String getName() {
 		return name;
@@ -18,9 +18,9 @@ public class Todo {
 
 	@Override
 	public String toString() {
-		return "Todo [name=" + name + "]";
+		return String.format("Todo [name=%s]", name);
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -45,4 +45,6 @@ public class Todo {
 			return false;
 		return true;
 	}
+
 }
+

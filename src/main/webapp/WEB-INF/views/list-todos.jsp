@@ -25,7 +25,7 @@
 
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
-			<li><a href="/todo.do">Todos</a></li>
+			<li><a href="/list-todos.do">Todos</a></li>
 			<li><a href="http://purabtech.in">purabtech</a></li>
 		</ul>
 
@@ -49,10 +49,8 @@
 		<p>
 			<font color="red">${errorMessage}</font>
 		</p>
-		<form method="POST" action="/add-todo.do">
-			New Todo : <input name="todo" type="text" /> <input name="add"
-				type="submit" />
-		</form>
+		<a
+					href="/add-todo.do">Add New Todo</a>
 	</div>
 
 	<footer class="footer">

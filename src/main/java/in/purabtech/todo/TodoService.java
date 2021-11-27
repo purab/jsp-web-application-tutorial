@@ -16,8 +16,8 @@ public class TodoService {
 		return todos;
 	}
 	
-	public void addTodo(String todo) {
-		todos.add(new Todo(todo));
+	public void addTodo(Todo todo) {
+		todos.add(todo);
 	}
 	
 	public void deleteTodo(String todo) {
