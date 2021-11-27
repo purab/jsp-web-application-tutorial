@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/list-todos.do")
 public class ListTodoServlet extends HttpServlet {
-
 	
 	private TodoService todoService = new TodoService();
 

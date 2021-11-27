@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/logout.do")
 public class LogoutServlet extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.getSession().invalidate();
